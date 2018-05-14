@@ -12,7 +12,7 @@ class App extends Component {
 
   componentWillMount() {
     getAllQuakes().then((data) => {
-      window.console.log(data);
+      this.setState({ earthquakes: data.features });
     });
   }
 
