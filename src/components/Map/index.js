@@ -1,5 +1,5 @@
 import React from 'react';
-import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import icon from './bullseye.png';
 
 const Map = (props) => {
@@ -13,7 +13,12 @@ const Map = (props) => {
           key={quake.id}
           icon={icon}
           position={{ lat: quake.geometry.coordinates[1], lng: quake.geometry.coordinates[0] }}
-        />
+          onClick={() => console.log(`You clicked me! ${quake.id}`)}
+        >
+          <InfoWindow >
+            <div>{quake.id}</div>
+          </InfoWindow>
+        </Marker>
       ))}
     </GoogleMap>
   ));
