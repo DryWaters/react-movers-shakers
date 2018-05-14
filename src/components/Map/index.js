@@ -13,11 +13,12 @@ const Map = (props) => {
           key={quake.id}
           icon={icon}
           position={{ lat: quake.geometry.coordinates[1], lng: quake.geometry.coordinates[0] }}
-          onClick={() => console.log(`You clicked me! ${quake.id}`)}
+          onClick={() => props.toggleInfo(quake.id)}
         >
-          <InfoWindow >
-            <div>{quake.id}</div>
-          </InfoWindow>
+          {quake.displayInfo &&
+            <InfoWindow >
+              <div>{quake.id}</div>
+            </InfoWindow>}
         </Marker>
       ))}
     </GoogleMap>
