@@ -8,13 +8,17 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      earthquakes: [],
+      allQuakes: [],
+      filteredQuakes: [],
     };
   }
 
   componentWillMount() {
     getAllQuakes().then((data) => {
-      this.setState({ earthquakes: data.features });
+      this.setState({
+        allQuakes: data.features,
+        filteredQuakes: data.features,
+      });
     });
   }
 
@@ -23,8 +27,8 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Search earthquakes={this.state.earthquakes} />
-        <Map earthquakes={this.state.earthquakes} />
+        <Search quakes={this.state.filteredQuakes} />
+        <Map quakes={this.state.filteredQuakes} />
       </div>
     );
   }
