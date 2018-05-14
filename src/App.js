@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
+import Search from './components/Search';
+import Map from './components/Map';
 import getAllQuakes from './components/EarthquakesAPI';
 
 class App extends Component {
@@ -19,7 +21,11 @@ class App extends Component {
 
   render() {
     return (
-      <Header />
+      <div>
+        <Header />
+        <Search earthquakes={this.state.earthquakes} />
+        <Map earthquakes={this.state.earthquakes} />
+      </div>
     );
   }
 }
