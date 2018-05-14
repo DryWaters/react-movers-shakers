@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Map = () => (
-  <h1>Map</h1>
-);
+class Map extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+  componentDidMount() {
+    // fetch map
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Map</h1>
+      </div>
+    );
+  }
+}
 
 export default Map;
