@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import Header from './components/Header'
 
 class App extends Component {
+
+  constructor() {
+    super();
+  }
+
+
   render() {
     return (
-      <div>
-        <h1>Welcome to React</h1>
-        <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Header />
     );
   }
 }
