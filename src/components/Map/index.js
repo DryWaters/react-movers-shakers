@@ -1,5 +1,6 @@
 import React from 'react';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import icon from './bullseye.png';
 
 const Map = (props) => {
   const GoogleMapExample = withGoogleMap(() => (
@@ -10,6 +11,7 @@ const Map = (props) => {
       {props.quakes.map(quake => (
         <Marker
           key={quake.id}
+          icon={icon}
           position={{ lat: quake.geometry.coordinates[1], lng: quake.geometry.coordinates[0] }}
         />
       ))}
@@ -20,8 +22,7 @@ const Map = (props) => {
     <GoogleMapExample
       containerElement={<div style={{ height: '500px', width: '500px' }} />}
       mapElement={<div style={{ height: '100%' }} />}
-    >
-    </GoogleMapExample>
+    />
   );
 };
 
