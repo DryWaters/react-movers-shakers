@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 const Map = (props) => {
@@ -15,7 +16,11 @@ const Map = (props) => {
         >
           {props.selection && quake.id === props.selection.id &&
             <InfoWindow >
-              <div>{quake.id}</div>
+              <div>
+                <div>Date: {moment(quake.properties.time).format('MM-DD-YYYY')}</div>
+                <div>Magnitude: {quake.properties.mag}</div>
+                <div><a href={quake.properties.url} target="#">More Information</a></div>
+              </div>
             </InfoWindow>}
         </Marker>
       ))}

@@ -32,7 +32,6 @@ class App extends Component {
   }
 
   handleToggleSelection(id) {
-    console.log(this.state.allQuakes);
     let selection = this.state.allQuakes.filter(quake => quake.id === id)[0];
     if (selection) {
       this.setState({ selection });
