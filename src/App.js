@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-import Search from './components/Search';
+import Filter from './components/Filter';
 import Map from './components/Map';
 import getAllQuakes from './components/EarthquakesAPI';
 
@@ -46,7 +46,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Search quakes={this.state.filteredQuakes} selection={this.state.selection} />
+        <Filter quakes={this.state.filteredQuakes} selection={this.state.selection} />
         <Map
           quakes={this.state.filteredQuakes}
           selection={this.state.selection}
