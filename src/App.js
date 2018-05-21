@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import Filter from './components/Filter';
+import Details from './components/Details';
 import Map from './components/Map';
 import getAllQuakes from './components/EarthquakesAPI';
 
@@ -38,7 +39,7 @@ class App extends Component {
   handleToggleSelection(id) {
     const selection = this.state.allQuakes.filter(quake => quake.id === id)[0];
     if (selection) {
-      this.setState({ selection });
+      this.setState({ selection: selection.id });
     }
   }
 
@@ -46,7 +47,12 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Filter quakes={this.state.filteredQuakes} selection={this.state.selection} />
+        <Filter />
+        <Details
+          quakes={this.state.filteredQuakes}
+          selection={this.state.selection}
+          toggleSelection={this.handleToggleSelection}
+        />
         <Map
           quakes={this.state.filteredQuakes}
           selection={this.state.selection}
