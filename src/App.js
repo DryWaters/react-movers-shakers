@@ -14,6 +14,7 @@ class App extends Component {
       selection: null,
     };
     this.handleToggleSelection = this.handleToggleSelection.bind(this);
+    this.handleDateFilters = this.handleDateFilters.bind(this);
   }
 
   componentWillMount() {
@@ -34,6 +35,13 @@ class App extends Component {
         filteredQuakes: quakes,
       });
     });
+  }
+
+  handleDateFilters(start, end) {
+    const filteredQuakes = this.state.allQuakes.filter(quake => (
+      quake.time > start && quake.time < end
+    ));
+    this.setState({ filteredQuakes });
   }
 
   handleToggleSelection(id) {
