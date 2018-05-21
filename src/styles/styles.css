@@ -38,6 +38,7 @@
 }
 
 .filter {
+  padding: 20px 20px;
   background: grey;
 }
 
@@ -50,6 +51,16 @@
 .header__title {
   color: white;
   margin: 0;
+}
+
+.quake-detail {
+  color: white;
+  padding: 10px 20px;
+  border-bottom: 3px solid black;
+}
+
+.quake-detail.selected {
+  background: blue;
 }
 
 /* @media (min-width: 500px) {
