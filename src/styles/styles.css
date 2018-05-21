@@ -5,6 +5,7 @@
 .details {
   background: grey;
   width: 20%;
+  min-height: 100vh;
   float: left;
 }
 
@@ -34,6 +35,10 @@
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.filter {
+  background: grey;
 }
 
 .header {
