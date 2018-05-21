@@ -1,5 +1,7 @@
 #map {
-  float: left;
+  position: absolue;
+  left: 0;
+  top: 0;
 }
 
 /*
@@ -31,9 +33,20 @@
 }
 
 .filter {
-  background: grey;
-  width: 20%;
-  float: left;
+  color: white;
+  position: absolute;
+  left: -1000px;
+  top: 0;
+}
+
+.filter--show {
+  left: 0;
+  top: 0;
+}
+
+.filter__input {
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .header {
@@ -49,16 +62,38 @@
 
 .quake-detail {
   color: white;
-  padding: 10px 20px;
   border-bottom: 3px solid black;
+  text-align: center;
+  padding: 15px 0;
 }
 
 .quake-detail.selected {
   background: blue;
 }
 
-/* @media (min-width: 500px) {
-  .DrawerToggle {
-      display: none;
+
+
+@media (min-width: 700px) {
+ .drawer-toggle {
+     display: none;
   }
-} */
+
+  .filter {
+    position: static;
+    display: block;
+    background: grey;
+    width: 20%;
+    float: left;
+    min-height: 100vh;
+    text-align: center;
+  }
+}
+
+
+@media (min-width: 1000px) {
+  .filter__input {
+    margin-bottom: 10px;
+    width: 80%;
+    max-width: 150px;
+  }
+}

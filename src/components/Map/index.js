@@ -35,7 +35,7 @@ const Map = (props) => {
 
   return (
     <WrappedGoogleMap
-      containerElement={<div id="map" style={{ height: '100vh', width: '80%' }} />}
+      containerElement={<div id="map" style={{ height: '100vh', width: '100%' }} />}
       mapElement={<div style={{ height: '100%' }} />}
     />
   );
