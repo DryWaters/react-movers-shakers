@@ -32,7 +32,7 @@ class App extends Component {
   }
 
   handleToggleSelection(id) {
-    let selection = this.state.allQuakes.filter(quake => quake.id === id)[0];
+    const selection = this.state.allQuakes.filter(quake => quake.id === id)[0];
     if (selection) {
       this.setState({ selection });
     }
@@ -43,7 +43,11 @@ class App extends Component {
       <div>
         <Header />
         <Search quakes={this.state.filteredQuakes} selection={this.state.selection} />
-        <Map quakes={this.state.filteredQuakes} selection={this.state.selection} toggleSelection={this.handleToggleSelection} />
+        <Map
+          quakes={this.state.filteredQuakes}
+          selection={this.state.selection}
+          toggleSelection={this.handleToggleSelection}
+        />
       </div>
     );
   }
