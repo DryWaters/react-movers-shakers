@@ -2,9 +2,9 @@ import React from 'react';
 import DrawerToggle from '../DrawerToggle';
 
 const Header = () => (
-  <div>
+  <div className="header">
     <DrawerToggle />
-    <h1 style={{ background: 'green', textAlign: 'center' }}>Movers and Shakers Bay Area</h1>
+    <h1 className="header__title">Movers and Shakers Bay Area</h1>
   </div>
 );
 

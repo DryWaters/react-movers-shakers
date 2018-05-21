@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Earthquake from '../Earthquake';
 
 const Details = props => (
-  <div className="details__container">
+  <div className="details">
     {props.quakes && props.quakes.map(quake => (
       <Earthquake
         key={quake.id}

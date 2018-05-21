@@ -1,8 +1,7 @@
 import React from 'react';
-import './styles.css';
 
 const DrawerToggle = () => (
-  <div className="DrawerToggle">
+  <div className="drawer-toggle">
     <div />
     <div />
     <div />
