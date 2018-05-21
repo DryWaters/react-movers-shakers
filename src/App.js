@@ -19,8 +19,12 @@ class App extends Component {
     getAllQuakes().then(data => (
       data.features.map(quake => (
         {
-          ...quake,
-          displayInfo: false,
+          id: quake.id,
+          time: quake.properties.time,
+          mag: quake.properties.mag,
+          url: quake.properties.url,
+          lat: quake.geometry.coordinates[1],
+          lng: quake.geometry.coordinates[0],
         }
       ))
     )).then((quakes) => {
