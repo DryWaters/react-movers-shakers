@@ -3,7 +3,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 
 const Earthquake = ({ quake, toggleSelection, selection }) => (
-  <div onClick={() => toggleSelection(quake)}>
+  <div onClick={() => toggleSelection(quake.id)}>
     <div>Latitude: {quake.lat}  Longitude: {quake.lng}</div>
     <div>Date: {moment(quake.time).format('MM-DD-YYYY')}</div>
     <div>Magnitude: {quake.mag}</div>
@@ -15,14 +15,14 @@ const Earthquake = ({ quake, toggleSelection, selection }) => (
 export default Earthquake;
 
 Earthquake.propTypes = {
-  quake: PropTypes.arrayOf(PropTypes.shape({
+  quake: PropTypes.shape({
     id: PropTypes.string.isRequired,
     time: PropTypes.number.isRequired,
     mag: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired,
     lat: PropTypes.number.isRequired,
     lng: PropTypes.number.isRequired,
-  })),
+  }),
   selection: PropTypes.string,
   toggleSelection: PropTypes.func.isRequired,
 };
