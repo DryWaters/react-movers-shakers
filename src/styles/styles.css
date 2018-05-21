@@ -3,10 +3,14 @@
 }
 
 .details {
-  background: red;
+  background: grey;
   width: 20%;
   float: left;
 }
+
+/*
+* Drawer togggle styles from https://www.w3schools.com/howto/howto_css_menu_icon.asp
+*/
 
 .drawer-toggle {
   cursor: pointer;

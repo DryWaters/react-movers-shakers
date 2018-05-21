@@ -8,6 +8,16 @@ import getAllQuakes from './components/EarthquakesAPI';
 import './styles/styles.css';
 import '../node_modules/normalize.css/normalize.css';
 
+// Sort by Key function from
+// https://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value
+// reversed and modified to be an arrow function
+function sortByKey(array, key) {
+  return array.sort((a, b) => {
+    const x = a[key]; const y = b[key];
+    return ((x > y) ? -1 : ((x < y) ? 1 : 0)); // eslint-disable-line
+  });
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -32,6 +42,8 @@ class App extends Component {
           lng: quake.geometry.coordinates[0],
         }
       ))
+    )).then(quakes => (
+      sortByKey(quakes, 'time')
     )).then((quakes) => {
       this.setState({
         allQuakes: quakes,
