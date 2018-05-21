@@ -64,11 +64,14 @@
   color: white;
   border-bottom: 3px solid black;
   text-align: center;
-  padding: 15px 0;
 }
 
 .quake-detail.selected {
   background: blue;
+}
+
+.quake-detail button {
+  padding: 15px 0;
 }
 
 
