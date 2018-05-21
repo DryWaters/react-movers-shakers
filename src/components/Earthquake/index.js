@@ -23,7 +23,7 @@ Earthquake.propTypes = {
     lat: PropTypes.number.isRequired,
     lng: PropTypes.number.isRequired,
   }),
-  selection: PropTypes.string,
+  selection: PropTypes.bool,
   toggleSelection: PropTypes.func.isRequired,
 };
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import Header from './components/Header';
 import Filter from './components/Filter';
 import Details from './components/Details';
@@ -14,7 +15,7 @@ class App extends Component {
       selection: null,
     };
     this.handleToggleSelection = this.handleToggleSelection.bind(this);
-    this.handleDateFilters = this.handleDateFilters.bind(this);
+    this.handleDateFilter = this.handleDateFilter.bind(this);
   }
 
   componentWillMount() {
@@ -37,9 +38,12 @@ class App extends Component {
     });
   }
 
-  handleDateFilters(start, end) {
+  handleDateFilter({ start, end }) {
+    if (start === '' || end === '') return;
+    const unixStartTime = moment(start).format('x');
+    const unixEndTime = moment(end).format('x');
     const filteredQuakes = this.state.allQuakes.filter(quake => (
-      quake.time > start && quake.time < end
+      quake.time > unixStartTime && quake.time < unixEndTime
     ));
     this.setState({ filteredQuakes });
   }
@@ -55,7 +59,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Filter />
+        <Filter filterQuakes={this.handleDateFilter} />
         <Details
           quakes={this.state.filteredQuakes}
           selection={this.state.selection}
