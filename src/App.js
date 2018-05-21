@@ -5,6 +5,7 @@ import Filter from './components/Filter';
 import Details from './components/Details';
 import Map from './components/Map';
 import getAllQuakes from './components/EarthquakesAPI';
+import './styles/styles.css';
 
 class App extends Component {
   constructor() {

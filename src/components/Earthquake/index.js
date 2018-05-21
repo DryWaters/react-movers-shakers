@@ -3,7 +3,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 
 const Earthquake = ({ quake, toggleSelection, selection }) => (
-  <div onClick={() => toggleSelection(quake.id)}>
+  <div onClick={() => toggleSelection(quake.id)} >
     <div>Latitude: {quake.lat}  Longitude: {quake.lng}</div>
     <div>Date: {moment(quake.time).format('MM-DD-YYYY')}</div>
     <div>Magnitude: {quake.mag}</div>
