@@ -4,10 +4,15 @@ import PropTypes from 'prop-types';
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 const Map = (props) => {
+  const defaultMapOptions = {
+    disableDefaultUI: true,
+  };
+
   const WrappedGoogleMap = withGoogleMap(() => (
     <GoogleMap
       defaultCenter={{ lat: 37.4800726, lng: -122.0811401 }}
       defaultZoom={9}
+      defaultOptions={defaultMapOptions}
     >
       {props.quakes.map(quake => (
         <Marker
@@ -30,7 +35,7 @@ const Map = (props) => {
 
   return (
     <WrappedGoogleMap
-      containerElement={<div style={{ height: '500px', width: '500px' }} />}
+      containerElement={<div id="map" style={{ height: '100vh', width: '100%' }} />}
       mapElement={<div style={{ height: '100%' }} />}
     />
   );

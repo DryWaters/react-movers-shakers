@@ -6,6 +6,7 @@ import Details from './components/Details';
 import Map from './components/Map';
 import getAllQuakes from './components/EarthquakesAPI';
 import './styles/styles.css';
+import '../node_modules/normalize.css/normalize.css';
 
 class App extends Component {
   constructor() {
