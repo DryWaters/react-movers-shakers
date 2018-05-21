@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Filter = props => (
   <div className="filter">
@@ -8,3 +9,7 @@ const Filter = props => (
 );
 
 export default Filter;
+
+Filter.propTypes = {
+  filterQuakes: PropTypes.func.isRequired,
+};
