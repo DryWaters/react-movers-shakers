@@ -2,13 +2,6 @@
   float: left;
 }
 
-.details {
-  background: grey;
-  width: 20%;
-  min-height: 100vh;
-  float: left;
-}
-
 /*
 * Drawer togggle styles from https://www.w3schools.com/howto/howto_css_menu_icon.asp
 */
@@ -38,8 +31,9 @@
 }
 
 .filter {
-  padding: 20px 20px;
   background: grey;
+  width: 20%;
+  float: left;
 }
 
 .header {

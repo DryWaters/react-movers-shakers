@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import Header from './components/Header';
 import Filter from './components/Filter';
-import Details from './components/Details';
 import Map from './components/Map';
 import getAllQuakes from './components/EarthquakesAPI';
 import './styles/styles.css';
@@ -73,11 +72,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Filter filterQuakes={this.handleDateFilter} />
-        <Details
+        <Filter
           quakes={this.state.filteredQuakes}
           selection={this.state.selection}
           toggleSelection={this.handleToggleSelection}
+          filterQuakes={this.handleDateFilter}
         />
         <Map
           quakes={this.state.filteredQuakes}

@@ -21,7 +21,7 @@ const Map = (props) => {
           onClick={() => props.toggleSelection(quake.id)}
         >
           {props.selection && quake.id === props.selection &&
-            <InfoWindow >
+            <InfoWindow>
               <div>
                 <div>Date: {moment(quake.time).format('MM-DD-YYYY')}</div>
                 <div>Magnitude: {quake.mag}</div>
