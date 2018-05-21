@@ -40,7 +40,12 @@ export default Map;
 
 Map.propTypes = {
   quakes: PropTypes.arrayOf(PropTypes.shape({
-
+    id: PropTypes.string.isRequired,
+    time: PropTypes.number.isRequired,
+    mag: PropTypes.number.isRequired,
+    url: PropTypes.string.isRequired,
+    lat: PropTypes.number.isRequired,
+    lng: PropTypes.number.isRequired,
   })),
 };
 
