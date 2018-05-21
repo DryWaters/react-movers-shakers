@@ -10,7 +10,9 @@ class App extends Component {
     this.state = {
       allQuakes: [],
       filteredQuakes: [],
+      selection: null,
     };
+    this.handleToggleSelection = this.handleToggleSelection.bind(this);
   }
 
   componentWillMount() {
@@ -26,19 +28,23 @@ class App extends Component {
         allQuakes: quakes,
         filteredQuakes: quakes,
       });
-    })
+    });
   }
 
-  handleToggleInfoWindow(id) {
-    console.log('You clicked on ' + id);
+  handleToggleSelection(id) {
+    console.log(this.state.allQuakes);
+    let selection = this.state.allQuakes.filter(quake => quake.id === id)[0];
+    if (selection) {
+      this.setState({ selection });
+    }
   }
 
   render() {
     return (
       <div>
         <Header />
-        <Search quakes={this.state.filteredQuakes} />
-        <Map quakes={this.state.filteredQuakes} toggleInfo={this.handleToggleInfoWindow} />
+        <Search quakes={this.state.filteredQuakes} selection={this.state.selection} />
+        <Map quakes={this.state.filteredQuakes} selection={this.state.selection} toggleSelection={this.handleToggleSelection} />
       </div>
     );
   }
