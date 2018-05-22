@@ -24,9 +24,11 @@ class App extends Component {
       allQuakes: [],
       filteredQuakes: [],
       selection: null,
+      showDrawer: false,
     };
     this.handleToggleSelection = this.handleToggleSelection.bind(this);
     this.handleDateFilter = this.handleDateFilter.bind(this);
+    this.handleToggleDrawer = this.handleToggleDrawer.bind(this);
   }
 
   componentWillMount() {
@@ -62,6 +64,10 @@ class App extends Component {
       .catch((err) => {
         window.console.log(`Unable to contact API with error ${err}`);
       });
+  }
+
+  handleToggleDrawer(drawerState) {
+    this.setState({ showDrawer: drawerState });
   }
 
   // handler for user selected filter dates
@@ -104,7 +110,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header showDrawer={this.state.showDrawer} toggleDrawer={this.handleToggleDrawer} />
         <Filter
           quakes={this.state.filteredQuakes}
           selection={this.state.selection}
