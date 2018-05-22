@@ -6,6 +6,7 @@ import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 const Map = (props) => {
   const defaultMapOptions = {
     disableDefaultUI: true,
+    draggable: false,
   };
 
   const WrappedGoogleMap = withGoogleMap(() => (
