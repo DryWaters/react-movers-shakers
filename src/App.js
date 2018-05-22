@@ -65,6 +65,8 @@ class App extends Component {
     const selection = this.state.allQuakes.filter(quake => quake.id === id)[0];
     if (selection && selection.id !== this.state.selection) {
       this.setState({ selection: selection.id });
+    } else {
+      this.setState({ selection: null });
     }
   }
 
