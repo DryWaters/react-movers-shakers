@@ -1,5 +1,5 @@
 # Movers and Shakers Project
-Movers and Shakers project is a React application that uses the USGS earthquake [API](https://earthquake.usgs.gov/fdsnws/event/1/) to get earthquakes that range from 5.0+ in magnitude that have hit the Bay Area.  There are options to filter the earthquakes by the start and end dates using the input fields.  This project is part of the [Udacity Front-End Developer Nanoprogram](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001).  
+Movers and Shakers project is a React application that uses the USGS earthquake [API](https://earthquake.usgs.gov/fdsnws/event/1/) to get earthquakes that range from 5.0+ in magnitude that have hit the Bay Area since 1900.  There are options to filter the earthquakes by the start and end dates using the input fields.  This project is part of the [Udacity Front-End Developer Nanoprogram](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001).  
 
 * [Instructions](#instructions)
 * [Getting Started](#getting-started)
