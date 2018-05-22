@@ -30,35 +30,54 @@ class App extends Component {
   }
 
   componentWillMount() {
-    getAllQuakes().then(data => (
-      data.features.map(quake => (
-        {
-          id: quake.id,
-          time: quake.properties.time,
-          mag: quake.properties.mag,
-          url: quake.properties.url,
-          lat: quake.geometry.coordinates[1],
-          lng: quake.geometry.coordinates[0],
-        }
+    // 1.  fetch all quakes from 1900 to current that have a magnitude greater
+    //     than 5 and in the Bay Area
+    // 2.  If successful, it strips off the fields that are needed
+    // 3.  Sorts them by date
+    // 4.  Sets the state with the sorted quakes
+    //         allQuakes to be used as entire list
+    //         filteredQuakes that is reflects the user's selected dates
+    getAllQuakes()
+      .then(data => (
+        data.features.map(quake => (
+          {
+            id: quake.id,
+            time: quake.properties.time,
+            mag: quake.properties.mag,
+            url: quake.properties.url,
+            lat: quake.geometry.coordinates[1],
+            lng: quake.geometry.coordinates[0],
+          }
+        ))
       ))
-    )).then(quakes => (
-      sortByKey(quakes, 'time')
-    )).then((quakes) => {
-      this.setState({
-        allQuakes: quakes,
-        filteredQuakes: quakes,
+      .then(quakes => (
+        sortByKey(quakes, 'time')
+      ))
+      .then((quakes) => {
+        this.setState({
+          allQuakes: quakes,
+          filteredQuakes: quakes,
+        });
+      })
+      .catch((err) => {
+        window.console.log(`Unable to contact API with error ${err}`);
       });
-    });
   }
 
+  // handler for user selected filter dates
   handleDateFilter({ start, end }) {
+    // if both inputs are cleared, reset
     if (start === '' && end === '') {
       this.setState({ filteredQuakes: this.state.allQuakes });
       return;
     }
 
+    // if either are cleared, just return because
+    // no reason to filter
     if (start === '' || end === '') return;
 
+    // convert the string to unix millisecond time to be compared with the
+    // api that returns the time in millisecond epoch time
     const unixStartTime = moment(start).format('x');
     const unixEndTime = moment(end).format('x');
     const filteredQuakes = this.state.allQuakes.filter(quake => (
@@ -67,8 +86,14 @@ class App extends Component {
     this.setState({ filteredQuakes });
   }
 
+  // handler for when user clicks on marker or listview item
   handleToggleSelection(id) {
+    // figure out which quake was selected from the ID
     const selection = this.state.allQuakes.filter(quake => quake.id === id)[0];
+
+    // if selection was found and is different than previous selection
+    // set the new selection to the one clicked
+    // else clear it
     if (selection && selection.id !== this.state.selection) {
       this.setState({ selection: selection.id });
     } else {
