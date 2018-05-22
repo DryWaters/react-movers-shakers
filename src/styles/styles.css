@@ -42,6 +42,7 @@
 }
 
 .filter--show {
+  font-size: 1.5em;
   background: grey;
   left: 0;
   top: 0;
@@ -93,9 +94,11 @@
     float: left;
     min-height: 100vh;
     text-align: center;
+    overflow: auto;
   }
+
   .header__title {
-    font-size: 2em;
+    font-size: 2.5em;
   }
 }
 
