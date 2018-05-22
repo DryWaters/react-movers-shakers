@@ -9,13 +9,23 @@ const Filter = props => (
         Start Date
       </div>
       <div>
-        <input className="filter__input" id="startDate" onChange={e => props.filterQuakes({ start: e.target.value, end: document.getElementById('endDate').value })} type="date" />
+        <input
+          className="filter__input"
+          id="startDate"
+          onChange={e => props.filterQuakes({ start: e.target.value, end: document.getElementById('endDate').value })}
+          type="date"
+        />
       </div>
       <div>
         End Date
       </div>
       <div>
-        <input className="filter__input" id="endDate" onChange={e => props.filterQuakes({ start: document.getElementById('startDate').value, end: e.target.value })} type="date" />
+        <input
+          className="filter__input"
+          id="endDate"
+          onChange={e => props.filterQuakes({ start: document.getElementById('startDate').value, end: e.target.value })}
+          type="date"
+        />
       </div>
       <Details
         quakes={props.quakes}
