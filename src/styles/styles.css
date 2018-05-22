@@ -61,7 +61,8 @@
 
 .header__title {
   color: white;
-  margin: 0;
+  margin: 0 20px;
+  font-size: 1.5em;
 }
 
 .quake-detail {
@@ -92,6 +93,9 @@
     float: left;
     min-height: 100vh;
     text-align: center;
+  }
+  .header__title {
+    font-size: 2em;
   }
 }
 

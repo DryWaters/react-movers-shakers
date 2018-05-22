@@ -7,12 +7,13 @@ const Map = (props) => {
   const defaultMapOptions = {
     disableDefaultUI: true,
     draggable: false,
+    disableAutoPan: true,
   };
 
   const WrappedGoogleMap = withGoogleMap(() => (
     <GoogleMap
-      defaultCenter={{ lat: 37.4800726, lng: -122.0811401 }}
-      defaultZoom={9}
+      defaultCenter={{ lat: 37.4800726, lng: -122.211401 }}
+      defaultZoom={window.screen.width > 400 ? 9 : 8}
       defaultOptions={defaultMapOptions}
     >
       {props.quakes.map(quake => (
