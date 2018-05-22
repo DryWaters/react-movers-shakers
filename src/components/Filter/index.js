@@ -4,7 +4,7 @@ import Details from '../Details';
 
 const Filter = props => (
   <div>
-    <div className="filter">
+    <div className={props.showDrawer ? 'filter--show' : 'filter'}>
       <div>
         Start Date
       </div>
@@ -40,6 +40,7 @@ Filter.propTypes = {
   })),
   selection: PropTypes.string,
   toggleSelection: PropTypes.func.isRequired,
+  showDrawer: PropTypes.bool.isRequired,
 };
 
 Filter.defaultProps = {

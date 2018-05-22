@@ -1,7 +1,8 @@
 #map {
-  position: absolue;
+  position: absolute;
   left: 0;
   top: 0;
+  z-index: -100;
 }
 
 /*
@@ -33,6 +34,7 @@
 }
 
 .filter {
+  background: grey;
   color: white;
   position: absolute;
   left: -1000px;
@@ -40,8 +42,10 @@
 }
 
 .filter--show {
+  background: grey;
   left: 0;
   top: 0;
+  z-index: 100;
 }
 
 .filter__input {
@@ -76,8 +80,6 @@
   padding: 15px 0;
 }
 
-
-
 @media (min-width: 700px) {
  .drawer-toggle {
      display: none;
@@ -86,7 +88,6 @@
   .filter {
     position: static;
     display: block;
-    background: grey;
     width: 20%;
     float: left;
     min-height: 100vh;

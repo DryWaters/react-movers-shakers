@@ -13,4 +13,5 @@ export default Header;
 
 Header.propTypes = {
   showDrawer: PropTypes.bool.isRequired,
+  toggleDrawer: PropTypes.func.isRequired,
 };

@@ -116,6 +116,7 @@ class App extends Component {
           selection={this.state.selection}
           toggleSelection={this.handleToggleSelection}
           filterQuakes={this.handleDateFilter}
+          showDrawer={this.state.showDrawer}
         />
         <Map
           quakes={this.state.filteredQuakes}
