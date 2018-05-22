@@ -52,7 +52,13 @@ class App extends Component {
   }
 
   handleDateFilter({ start, end }) {
+    if (start === '' && end === '') {
+      this.setState({ filteredQuakes: this.state.allQuakes });
+      return;
+    }
+
     if (start === '' || end === '') return;
+
     const unixStartTime = moment(start).format('x');
     const unixEndTime = moment(end).format('x');
     const filteredQuakes = this.state.allQuakes.filter(quake => (
