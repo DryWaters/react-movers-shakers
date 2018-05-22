@@ -9,7 +9,7 @@ import '../node_modules/normalize.css/normalize.css';
 
 // Sort by Key function from
 // https://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value
-// reversed and modified to be an arrow function
+// I reversed the order and modified to be an arrow function
 function sortByKey(array, key) {
   return array.sort((a, b) => {
     const x = a[key]; const y = b[key];
@@ -19,13 +19,13 @@ function sortByKey(array, key) {
 
 // register service worker
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('/sw.js').then(reg => {
-    console.log('Service worker registered.  Scope is ', reg.scope);
-  }).catch(error => {
-    console.log('Registration failed:', error);
+  navigator.serviceWorker.register('/sw.js').then((reg) => {
+    window.console.log('Service worker registered.  Scope is ', reg.scope);
+  }).catch((error) => {
+    window.console.log('Registration failed:', error);
   });
 } else {
-  console.log('Service workers are not supproted');
+  window.console.log('Service workers are not supproted');
 }
 
 class App extends Component {
