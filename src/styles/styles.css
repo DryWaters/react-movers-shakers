@@ -48,6 +48,9 @@
   background: grey;
   color: white;
   display: none;
+  overflow: scroll;
+  height: 100%;
+  text-align: center;
 }
 
 .filter--show {
@@ -110,9 +113,7 @@
     display: block;
     width: 20%;
     float: left;
-    min-height: 100vh;
-    text-align: center;
-    overflow: auto;
+    max-height: calc(100vh - 86px);
   }
 
   .header__title {

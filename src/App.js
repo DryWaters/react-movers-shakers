@@ -17,16 +17,16 @@ function sortByKey(array, key) {
   });
 }
 
-// register service worker
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('/sw.js').then((reg) => {
-    window.console.log('Service worker registered.  Scope is ', reg.scope);
-  }).catch((error) => {
-    window.console.log('Registration failed:', error);
-  });
-} else {
-  window.console.log('Service workers are not supproted');
-}
+// // register service worker
+// if (navigator.serviceWorker) {
+//   navigator.serviceWorker.register('/sw.js').then((reg) => {
+//     window.console.log('Service worker registered.  Scope is ', reg.scope);
+//   }).catch((error) => {
+//     window.console.log('Registration failed:', error);
+//   });
+// } else {
+//   window.console.log('Service workers are not supproted');
+// }
 
 class App extends Component {
   constructor() {
