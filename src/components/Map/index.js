@@ -1,3 +1,5 @@
+/* global google */ // eslint-ignore
+
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
@@ -21,6 +23,7 @@ const Map = (props) => {
           key={quake.id}
           position={{ lat: quake.lat, lng: quake.lng }}
           onClick={() => props.toggleSelection(quake.id)}
+          animation={quake.id === props.selection ? google.maps.Animation.BOUNCE : ''}
         >
           {props.selection && quake.id === props.selection &&
             <InfoWindow>
