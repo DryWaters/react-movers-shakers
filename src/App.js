@@ -17,6 +17,11 @@ function sortByKey(array, key) {
   });
 }
 
+// handles JS error messages and displays them to the end user.
+window.onerror = (errorMsg, url, lineNumber) => {
+  window.alert('Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber); //eslint-disable-line
+};
+
 // // register service worker
 // if (navigator.serviceWorker) {
 //   navigator.serviceWorker.register('/sw.js').then((reg) => {

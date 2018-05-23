@@ -72,7 +72,7 @@
 .header {
   text-align: center;
   background: grey;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .header__title {
@@ -113,10 +113,14 @@
     display: block;
     width: 20%;
     float: left;
-    min-height: calc(100vh - 86px);
-    max-height: calc(100vh - 86px);
+    min-height: calc(100vh - 116px);
+    max-height: calc(100vh - 116px);
   }
 
+  .header {
+    max-height: 116px;
+  }
+  
   .header__title {
     font-size: 2.5em;
   }
