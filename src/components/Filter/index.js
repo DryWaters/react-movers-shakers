@@ -5,28 +5,29 @@ import Details from '../Details';
 const Filter = props => (
   <div>
     <div className={props.showDrawer ? 'filter--show' : 'filter'}>
-      <div>
+      <label htmlFor="startDate">
         Start Date
-      </div>
-      <div>
-        <input
-          className="filter__input"
-          id="startDate"
-          onChange={e => props.filterQuakes({ start: e.target.value, end: document.getElementById('endDate').value })}
-          type="date"
-        />
-      </div>
-      <div>
+        <div>
+          <input
+            aria-label="Start Date"
+            className="filter__input"
+            id="startDate"
+            onChange={e => props.filterQuakes({ start: e.target.value, end: document.getElementById('endDate').value })}
+            type="date"
+          />
+        </div>
+      </label>
+      <label htmlFor="endDate">
         End Date
-      </div>
-      <div>
-        <input
-          className="filter__input"
-          id="endDate"
-          onChange={e => props.filterQuakes({ start: document.getElementById('startDate').value, end: e.target.value })}
-          type="date"
-        />
-      </div>
+        <div>
+          <input
+            className="filter__input"
+            id="endDate"
+            onChange={e => props.filterQuakes({ start: document.getElementById('startDate').value, end: e.target.value })}
+            type="date"
+          />
+        </div>
+      </label>
       <Details
         quakes={props.quakes}
         selection={props.selection}
