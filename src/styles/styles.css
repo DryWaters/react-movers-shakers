@@ -113,6 +113,7 @@
     display: block;
     width: 20%;
     float: left;
+    min-height: calc(100vh - 86px);
     max-height: calc(100vh - 86px);
   }
 
